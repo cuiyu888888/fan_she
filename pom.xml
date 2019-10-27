@@ -8,5 +8,26 @@
     <artifactId>fan_she</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <!--junit版本-->
+        <junit.version>4.12</junit.version>
+        <!--lombok版本-->
+        <lombok.version>1.16.6</lombok.version>
+    </properties>
+
+    <dependencies>
+        <!--junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
