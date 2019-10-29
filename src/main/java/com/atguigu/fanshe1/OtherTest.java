@@ -9,7 +9,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 /**
- *
+ * 其他的注解方法
  */
 public class OtherTest {
 
@@ -37,9 +37,8 @@ public class OtherTest {
 
     }
 
-    /*
-    获取运行时类的父类
-
+    /**
+     * 获取运行时类的父类
      */
     @Test
     public void test2(){
@@ -49,9 +48,8 @@ public class OtherTest {
         System.out.println(superclass);
     }
 
-    /*
-    获取运行时类的带泛型的父类
-
+    /**
+     * 获取运行时类的带泛型的父类
      */
     @Test
     public void test3(){
@@ -61,11 +59,8 @@ public class OtherTest {
         System.out.println(genericSuperclass);
     }
 
-    /*
-    获取运行时类的带泛型的父类的泛型
-
-
-    代码：逻辑性代码  vs 功能性代码
+    /**
+     * 获取运行时类的带泛型的父类的泛型
      */
     @Test
     public void test4(){
@@ -75,12 +70,13 @@ public class OtherTest {
         ParameterizedType paramType = (ParameterizedType) genericSuperclass;
         //获取泛型类型
         Type[] actualTypeArguments = paramType.getActualTypeArguments();
-//        System.out.println(actualTypeArguments[0].getTypeName());
+
+        System.out.println(actualTypeArguments[0].getTypeName());
         System.out.println(((Class)actualTypeArguments[0]).getName());
     }
 
-    /*
-    获取运行时类实现的接口
+    /**
+     * 获取运行时类实现的接口
      */
     @Test
     public void test5(){
@@ -99,9 +95,21 @@ public class OtherTest {
         }
 
     }
-    /*
-        获取运行时类所在的包
 
+    /**
+     * 获取运行时类带泛型的接口
+     */
+    @Test
+    public void test51(){
+        Class clazz = Person.class;
+        Type[] genericInterfaces = clazz.getGenericInterfaces();
+        for(Type c : genericInterfaces){
+            System.out.println(c);
+        }
+    }
+
+    /**
+     * 获取运行时类所在的包
      */
     @Test
     public void test6(){
@@ -111,9 +119,8 @@ public class OtherTest {
         System.out.println(pack);
     }
 
-    /*
-        获取运行时类声明的注解
-
+    /**
+     * 获取运行时类声明的注解
      */
     @Test
     public void test7(){
